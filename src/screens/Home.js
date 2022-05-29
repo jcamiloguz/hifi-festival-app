@@ -1,5 +1,6 @@
 import React from "react"
 import { SafeAreaView } from "react-native-safe-area-context"
+<<<<<<< HEAD
 import Unorderedlist from "react-native-unordered-list"
 import { Video, AVPlaybackStatus } from "expo-av"
 import {
@@ -12,11 +13,17 @@ import {
   StyleSheet,
   FlatList,
 } from "react-native"
+=======
+import { Text, StyleSheet, View, Animated } from "react-native"
+import { Hero_main } from "../components/Hero_main"
+import { Playlist } from "../components/Playlist"
+>>>>>>> remotes/origin/feature-bhc
 
 export function Home() {
   const video = React.useRef(null)
   return (
     <SafeAreaView>
+<<<<<<< HEAD
       <View style={styles.containerHero}>
         <Video
           ref={video}
@@ -121,3 +128,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 })
+=======
+      <Hero_main />
+      <Playlist />
+    </SafeAreaView>
+  )
+}
+const styles = StyleSheet.create({})
+>>>>>>> remotes/origin/feature-bhc
