@@ -1,22 +1,10 @@
-import { AVPlaybackStatus, Video } from "expo-av"
-import {
-  Animated,
-  Button,
-  FlatList,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native"
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native"
 
-import { Hero_main } from "../components/Hero_main"
+import { Location } from "../components/Location"
 import { Playlist } from "../components/Playlist"
 import React from "react"
-import { SafeAreaView } from "react-native-safe-area-context"
 import Unorderedlist from "react-native-unordered-list"
+import { Video } from "expo-av"
 
 export function Home() {
   const video = React.useRef(null)
@@ -44,7 +32,7 @@ export function Home() {
       <Text style={styles.title}>About HiFi Festival</Text>
       <Text style={styles.parrafo}>
         The HiFi Festival is the most important festival of hifi music in latam,
-        we get the 20 most important artist of the century. Hifi festival is
+        we get the 21 most important artist of the century. Hifi festival is
         looking for the performance of each artist.
       </Text>
       <View style={styles.ul}>
@@ -71,6 +59,7 @@ export function Home() {
           </Unorderedlist>
         </View>
       </View>
+      <Location></Location>
       <Playlist />
     </ScrollView>
   )

@@ -1,6 +1,5 @@
 import {
   Animated,
-  Linking,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -30,12 +29,6 @@ export function Playlist() {
       }),
     ])
   ).start()
-
-  // SPOTIFY
-  const size = {
-    width: "100%",
-    height: 300,
-  }
 
   return (
     <View style={styles.section_playlist}>
