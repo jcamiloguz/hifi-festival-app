@@ -1,20 +1,17 @@
-import React from "react"
-import { SafeAreaView } from "react-native-safe-area-context"
 import {
-  Text,
-  StyleSheet,
-  View,
   Animated,
-  TouchableOpacity,
-  Image,
   Linking,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native"
-import SpotifyPlayer from "react-spotify-player"
-import { useRef } from "react"
-import { withAnchorPoint } from "react-native-anchor-point"
+import React, { useRef } from "react"
+
+import { WebView } from "react-native-webview"
 
 export function Playlist() {
-  //*ANIMATION
+  // ANIMATION
   const circle1 = useRef(new Animated.Value(0)).current
   const circle2 = useRef(new Animated.Value(0)).current
   Animated.loop(
@@ -34,7 +31,7 @@ export function Playlist() {
     ])
   ).start()
 
-  //*SPOTIFY
+  // SPOTIFY
   const size = {
     width: "100%",
     height: 300,
@@ -45,14 +42,18 @@ export function Playlist() {
       <Text style={styles.tittle}>PlayList</Text>
       <TouchableOpacity
         style={styles.spotify__playlist}
-        onPress={() => {
-          Linking.openURL("https://google.com")
-        }}
+        // onPress={() => {
+        //   Linking.openURL("https://google.com")
+        // }}
       >
-        <Image
-          style={styles.spotify__icon}
-          source={require("../assets/img/Vector.png")}
-          resizeMode="contain"
+        <WebView
+          originWhitelist={["*"]}
+          source={{
+            html: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1MmGFc1vZRqamgyvroE7Wp?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
+          }}
+          style={{
+            width: "100%",
+          }}
         />
       </TouchableOpacity>
       <Animated.View
@@ -146,7 +147,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     height: 200,
-    width: 200,
+    width: "95%",
   },
   spotify__icon: {
     height: "80%",

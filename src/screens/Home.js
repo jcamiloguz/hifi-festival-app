@@ -1,29 +1,27 @@
-import React from "react"
-import { SafeAreaView } from "react-native-safe-area-context"
-<<<<<<< HEAD
-import Unorderedlist from "react-native-unordered-list"
-import { Video, AVPlaybackStatus } from "expo-av"
+import { AVPlaybackStatus, Video } from "expo-av"
 import {
-  View,
+  Animated,
+  Button,
+  FlatList,
+  Image,
+  ScrollView,
+  StyleSheet,
   Text,
   TextInput,
-  Button,
-  Image,
   TouchableOpacity,
-  StyleSheet,
-  FlatList,
+  View,
 } from "react-native"
-=======
-import { Text, StyleSheet, View, Animated } from "react-native"
+
 import { Hero_main } from "../components/Hero_main"
 import { Playlist } from "../components/Playlist"
->>>>>>> remotes/origin/feature-bhc
+import React from "react"
+import { SafeAreaView } from "react-native-safe-area-context"
+import Unorderedlist from "react-native-unordered-list"
 
 export function Home() {
   const video = React.useRef(null)
   return (
-    <SafeAreaView>
-<<<<<<< HEAD
+    <ScrollView>
       <View style={styles.containerHero}>
         <Video
           ref={video}
@@ -33,17 +31,16 @@ export function Home() {
             require("../files/vid/hero.mp4")
           }
           resizeMode="cover"
-          isLooping="true"
-          shouldPlay="true"
+          isLooping={true}
+          shouldPlay={true}
         />
-        
-        <Image 
-        style={styles.animationVideo}
-        source={require("../files/vid/animacion.gif")}>
-        </Image>
-      
+
+        <Image
+          style={styles.animationVideo}
+          source={require("../files/vid/animacion.gif")}
+        ></Image>
       </View>
-      
+
       <Text style={styles.title}>About HiFi Festival</Text>
       <Text style={styles.parrafo}>
         The HiFi Festival is the most important festival of hifi music in latam,
@@ -74,7 +71,8 @@ export function Home() {
           </Unorderedlist>
         </View>
       </View>
-    </SafeAreaView>
+      <Playlist />
+    </ScrollView>
   )
 }
 
@@ -128,11 +126,3 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 })
-=======
-      <Hero_main />
-      <Playlist />
-    </SafeAreaView>
-  )
-}
-const styles = StyleSheet.create({})
->>>>>>> remotes/origin/feature-bhc
