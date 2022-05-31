@@ -4,8 +4,8 @@ import { Text } from "react-native"
 
 export function Artists() {
   return (
-    <SafeAreaView>
-      <Text>Artists</Text>
-    </SafeAreaView>
+      <SafeAreaView>
+        <Text>Artist</Text>
+      </SafeAreaView>
   )
 }
