@@ -8,6 +8,7 @@ import IconSecond from "react-native-vector-icons/FontAwesome"
 import { NavigationContainer } from "@react-navigation/native"
 import { SafeAreaProvider } from "react-native-safe-area-context"
 import { User } from "./src/screens/User"
+import { TicketsNavigation } from "./src/navigation/TicketsNavigation"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
 const Tab = createBottomTabNavigator()
@@ -50,7 +51,7 @@ export default function App() {
           />
           <Tab.Screen
             name="User"
-            component={User}
+            component={TicketsNavigation}
             options={{
               tabBarLabel: "Tickets",
               tabBarIcon: ({ color, size }) => (
