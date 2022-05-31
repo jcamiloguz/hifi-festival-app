@@ -1,14 +1,13 @@
-import React from "react"
-import { SafeAreaView } from "react-native-safe-area-context"
 import {
-  Text,
-  ScrollView,
-  View,
-  StyleSheet,
-  TouchableOpacity,
   Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native"
-import { useNavigation } from "@react-navigation/native"
+
+import React from "react"
 
 export default function CheckoutSucces({ navigation }) {
   const goToHome = () => {
@@ -47,7 +46,9 @@ export default function CheckoutSucces({ navigation }) {
         </View>
       </View>
       <TouchableOpacity style={styles.btn__Home} onPress={() => goToHome()}>
-        <Text style={[styles.title, { color: "#fff", height: 30 }]}>HOME</Text>
+        <Text style={[styles.title, { color: "#fff", height: 30 }]}>
+          GO BACK
+        </Text>
       </TouchableOpacity>
     </ScrollView>
   )
