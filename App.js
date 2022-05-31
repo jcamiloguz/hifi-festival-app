@@ -1,66 +1,23 @@
 import * as React from "react"
 
-import { Artists } from "./src/screens/Artists"
-import { Gallery } from "./src/screens/Gallery"
-import { Home } from "./src/screens/Home"
-import Icon from "react-native-vector-icons/MaterialCommunityIcons"
-import IconSecond from "react-native-vector-icons/FontAwesome"
+import Menu from "./src/navigation/Menu"
+import CustomButtons from "./src/screens/Onboarding"
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { NavigationContainer } from "@react-navigation/native"
-import { SafeAreaProvider } from "react-native-safe-area-context"
-import { User } from "./src/screens/User"
-import { TicketsNavigation } from "./src/navigation/TicketsNavigation"
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
-const Tab = createBottomTabNavigator()
+const Stack = createNativeStackNavigator()
 
 export default function App() {
   return (
     <NavigationContainer>
-      <SafeAreaProvider>
-        <Tab.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}
-        >
-          <Tab.Screen
-            name="Home"
-            component={Home}
-            options={{
-              tabBarIcon: ({ color, size }) => (
-                <Icon name="home" color={color} size={size} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Artists"
-            component={Artists}
-            options={{
-              tabBarIcon: ({ color, size }) => (
-                <Icon name="account-music" color={color} size={size} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Gallery"
-            component={Gallery}
-            options={{
-              tabBarIcon: ({ color, size }) => (
-                <Icon name="view-carousel" color={color} size={size} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="User"
-            component={TicketsNavigation}
-            options={{
-              tabBarLabel: "Tickets",
-              tabBarIcon: ({ color, size }) => (
-                <IconSecond name="ticket" color={color} size={size} />
-              ),
-            }}
-          />
-        </Tab.Navigator>
-      </SafeAreaProvider>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="OnboardingScreen" component={CustomButtons} />
+        <Stack.Screen
+          name="MenuScreen"
+          component={Menu}
+          options={{ headerShown: false, headerLeftLabelVisible: false }}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   )
 }
