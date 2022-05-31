@@ -1,10 +1,10 @@
-import { User } from "../screens/User"
 import Checkout from "../screens/Checkout"
 import CheckoutSucces from "../screens/CheckoutSucces"
 import { Home } from "../screens/Home"
 import React from "react"
-import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import { User } from "../screens/User"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
 
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -27,4 +27,4 @@ export function TicketsNavigation() {
   )
 }
 
-//yarn add @react-navigation/native-stack
+// yarn add @react-navigation/native-stack
