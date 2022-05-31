@@ -1,10 +1,52 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native"
 
+import { CustomCarousel } from "../components/Carousel"
 import { Location } from "../components/Location"
 import { Playlist } from "../components/Playlist"
 import React from "react"
 import Unorderedlist from "react-native-unordered-list"
 import { Video } from "expo-av"
+
+const dataArtists = [
+  {
+    title: "Kanye West",
+    imgUrl: require("../assets/img/Artists/kanye.jpeg"),
+  },
+  {
+    title: "Wos",
+    imgUrl: require("../assets/img/Artists/wos.jpeg"),
+  },
+  {
+    title: "C.Tangana",
+    imgUrl: require("../assets/img/Artists/ctangana.jpeg"),
+  },
+  {
+    title: "Bad Bunny",
+    imgUrl: require("../assets/img/Artists/badbunny.jpeg"),
+  },
+  {
+    title: "Frank Ocean",
+    imgUrl: require("../assets/img/Artists/frank.jpeg"),
+  },
+]
+const dataSponsors = [
+  {
+    title: "Github",
+    imgUrl: require("../assets/img/Sponsors/Github.png"),
+  },
+  {
+    title: "Globant",
+    imgUrl: require("../assets/img/Sponsors/globant.png"),
+  },
+  {
+    title: "Spotify",
+    imgUrl: require("../assets/img/Sponsors/spotify.png"),
+  },
+  {
+    title: "Y Combinator",
+    imgUrl: require("../assets/img/Sponsors/yc.png"),
+  },
+]
 
 export function Home() {
   const video = React.useRef(null)
@@ -60,7 +102,9 @@ export function Home() {
         </View>
       </View>
       <Location></Location>
+      <CustomCarousel data={dataArtists} title="OUR ARTISTS" />
       <Playlist />
+      <CustomCarousel data={dataSponsors} title="SPONSORS" />
     </ScrollView>
   )
 }

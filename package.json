@@ -29,6 +29,7 @@
     "react-native-radio-buttons-group": "^2.2.10",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
+    "react-native-snap-carousel": "^3.9.1",
     "react-native-unordered-list": "^1.0.4",
     "react-native-vector-icons": "^9.1.0",
     "react-native-video": "^5.2.0",
