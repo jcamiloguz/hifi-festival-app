@@ -45,7 +45,8 @@ export function Playlist() {
             html: `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1MmGFc1vZRqamgyvroE7Wp?utm_source=generator" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`,
           }}
           style={{
-            width: "100%",
+            width: "253%",
+            height: "277%",
           }}
         />
       </TouchableOpacity>
@@ -57,13 +58,13 @@ export function Playlist() {
               {
                 scaleX: circle1.interpolate({
                   inputRange: [0, 1, 2, 3],
-                  outputRange: [0, 0.5, 0, 0],
+                  outputRange: [0, 0.8, 0, 0],
                 }),
               },
               {
                 scaleY: circle1.interpolate({
                   inputRange: [0, 1, 2, 3],
-                  outputRange: [0, 0.55, 0, 0],
+                  outputRange: [0, 0.85, 0, 0],
                 }),
               },
             ],
@@ -82,13 +83,13 @@ export function Playlist() {
               {
                 scaleX: circle2.interpolate({
                   inputRange: [0, 1, 2, 3],
-                  outputRange: [0, 0.5, 0, 0],
+                  outputRange: [0, 0.8, 0, 0],
                 }),
               },
               {
                 scaleY: circle2.interpolate({
                   inputRange: [0, 1, 2, 3],
-                  outputRange: [0, 0.55, 0, 0],
+                  outputRange: [0, 0.85, 0, 0],
                 }),
               },
             ],
@@ -99,7 +100,6 @@ export function Playlist() {
           },
         ]}
       ></Animated.View>
-      <Text style={styles.subtittle}>Go to our playlist</Text>
     </View>
   )
 }
@@ -111,19 +111,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    height: 360,
-    // backgroundColor: "powderblue",
+    height: 420,
   },
   tittle: {
     position: "absolute",
-    top: 34,
+    top: 20,
     textAlign: "center",
     fontSize: 28,
     fontWeight: "bold",
   },
   circleAnimation: {
     position: "absolute",
-    top: 0,
+    top: 24,
     right: 0,
     bottom: 0,
     left: 0,
@@ -135,12 +134,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#2fd766",
   },
   spotify__playlist: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    height: 200,
-    width: "95%",
+    // display: "none",
+    marginTop: 24,
+    width: 253,
+    height: 277,
   },
   spotify__icon: {
     height: "80%",
