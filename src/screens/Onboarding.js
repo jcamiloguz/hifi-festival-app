@@ -1,9 +1,10 @@
-import React from "react"
-import { Image, View, TouchableOpacity, Text } from "react-native"
+import { Image, Text, TouchableOpacity, View } from "react-native"
+
 import Button from "react-native-elements"
 import Icon from "react-native-vector-icons/MaterialCommunityIcons"
 import IconSecond from "react-native-vector-icons/FontAwesome"
 import Onboarding from "react-native-onboarding-swiper"
+import React from "react"
 import { useNavigation } from "@react-navigation/native"
 
 const Square = ({ isLight, selected }) => {
@@ -92,27 +93,26 @@ export default function CustomButtons({ navigation }) {
       pages={[
         {
           backgroundColor: "#fff",
-          image: <Icon name="home" />,
+          image: <Icon name="home" size={80} />,
           title: "Home",
           subtitle: "Where you can find all the information about us",
-          titleStyles: { color: "red" }, // overwrite default color
         },
         {
           backgroundColor: "#fff",
-          image: <Icon name="account-music" />,
+          image: <Icon name="account-music" size={80} />,
           title: "Artists",
           subtitle:
             "This is where you cand find all the artist that will come to our festival.",
         },
         {
           backgroundColor: "#fff",
-          image: <Icon name="view-carousel" />,
+          image: <Icon name="view-carousel" size={80} />,
           title: "Gallery",
           subtitle: "All our past festivals and concerts.",
         },
         {
           backgroundColor: "#fff",
-          image: <IconSecond name="ticket" />,
+          image: <IconSecond name="ticket" size={80} />,
           title: "Tickets",
           subtitle: "Where you can buy your tickets.",
         },
